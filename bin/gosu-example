@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+# Require Pathname class from standard library. Basicall File and Dir classes smushed into one awesome class.
+require "pathname"
+
+# Add "lib" directory to load path
+$LOAD_PATH.unshift(Pathname.new(__FILE__).join("..", "..", "lib").expand_path.to_s)
+
+# Require gosu_example.rb from "lib" directory
+require "gosu_example"
+
+# Call the #run module function on GosuExample
+GosuExample.run
